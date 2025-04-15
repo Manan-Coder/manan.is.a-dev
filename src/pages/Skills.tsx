@@ -1,5 +1,5 @@
 
-import { Command, Database, Terminal, Braces, Code, Globe, Server, Workflow, Laptop } from "lucide-react";
+import { Command, Database, Terminal, Braces, Code, Globe, Server, Workflow, Laptop, LucideMoveLeft } from "lucide-react";
 
 const Skills = () => {
   const skillCategories = [
@@ -7,11 +7,12 @@ const Skills = () => {
       title: "Languages",
       icon: <Terminal className="text-space-accent" size={24} />,
       skills: [
-        { name: "Python", level: 80 },
+        { name: "Python", level: 90 },
         { name: "JavaScript", level: 90 },
         { name: "TypeScript", level: 70 },
         { name: "HTML & CSS", level: 99 },
         { name: "Rust", level: 60 },
+        {name:"GDScript", level:90}
       ],
     },
     {
@@ -23,7 +24,7 @@ const Skills = () => {
         { name: "Svelte", level: 80 },
         { name: "Flask", level: 90 },
         { name: "Django", level: 85 },
-        { name: "Astro", level: 75 },
+        { name: "Astro", level: 85 }
       ],
     },
     {
@@ -46,6 +47,7 @@ const Skills = () => {
         { name: "PostgreSQL", level: 90 },
         { name: "Node.js", level: 85 },
         { name: "RESTful APIs", level: 90 },
+        {name:"MySQL", level:95}
       ],
     },
   ];
