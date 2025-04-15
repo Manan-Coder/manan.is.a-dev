@@ -10,13 +10,13 @@ const projects = [
   }
   ,
   {id: 2,
-    name:"YapScript!",
-    description:"A toy programming language with web version made in Javascript and CLI version in Python."
+    name:"Devil's Kitchen",
+    description:"A topdown-cum-platformer RPG game made in Godot."
    }
    ,
    {id: 3,
      name:"Personal site",
-     description:"This very website, made with React and styles with tailwind."
+     description:"This very website, made with React and styled with tailwind."
     }
  ]
 const blogs = 
@@ -66,15 +66,23 @@ const Home = () => {
           
           <div className="w-full md:w-2/5 flex justify-center">
             <div className="relative">
+              <Link to={"https://github.com/Manan-Coder/manan.is.a-dev"}>
               <div className="w-64 h-64 rounded-full bg-space-purple bg-opacity-20 backdrop-blur-xl border border-space-purple/30 flex items-center justify-center animate-float">
                 <Code size={100} className="text-space-accent" />
               </div>
+              </Link>
+              <Link to={"/blog"}>
+              
               <div className="absolute -top-4 -right-4 w-16 h-16 rounded-full bg-space-accent bg-opacity-20 backdrop-blur-xl border border-space-accent/30 flex items-center justify-center animate-float" style={{ animationDelay: "1s" }}>
                 <Rocket size={24} className="text-space-accent" />
+            
               </div>
+              </Link>
+              <Link to={"https://github.com/Manan-Coder"}>
               <div className="absolute -bottom-4 -left-4 w-20 h-20 rounded-full bg-space-nebula bg-opacity-20 backdrop-blur-xl border border-space-nebula/30 flex items-center justify-center animate-float" style={{ animationDelay: "2s" }}>
                 <Github size={32} className="text-space-nebula" />
               </div>
+              </Link>
             </div>
           </div>
         </section>

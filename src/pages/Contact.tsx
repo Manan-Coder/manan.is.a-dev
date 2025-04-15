@@ -26,7 +26,7 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
 
-    // Simulate form submission
+
     setTimeout(() => {
       toast({
         title: "Message sent!",
@@ -139,7 +139,7 @@ const Contact = () => {
                   <Mail className="text-space-accent mr-4 mt-1" size={24} />
                   <div>
                     <h3 className="font-semibold">Email</h3>
-                    <p className="text-gray-300">contact@manan-sharma.com</p>
+                    <p className="text-gray-300">manancoder123@gmail.com</p>
                   </div>
                 </div>
                 
@@ -147,7 +147,7 @@ const Contact = () => {
                   <h3 className="font-semibold mb-3">Social Profiles</h3>
                   <div className="flex space-x-4">
                     <a
-                      href="https://github.com"
+                      href="https://github.com/Manan-Coder"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="bg-space-darker bg-opacity-70 backdrop-blur-md border border-space-accent/20 rounded-lg p-3 text-white hover:text-space-accent hover:border-space-accent/50 transition-colors"
@@ -155,7 +155,7 @@ const Contact = () => {
                       <Github size={24} />
                     </a>
                     <a
-                      href="https://linkedin.com"
+                      href="https://www.linkedin.com/in/manan-sharma-434091281/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="bg-space-darker bg-opacity-70 backdrop-blur-md border border-space-accent/20 rounded-lg p-3 text-white hover:text-space-accent hover:border-space-accent/50 transition-colors"
@@ -163,7 +163,7 @@ const Contact = () => {
                       <Linkedin size={24} />
                     </a>
                     <a
-                      href="mailto:contact@manan-sharma.com"
+                      href="mailto:manancoder123@gmail.com"
                       className="bg-space-darker bg-opacity-70 backdrop-blur-md border border-space-accent/20 rounded-lg p-3 text-white hover:text-space-accent hover:border-space-accent/50 transition-colors"
                     >
                       <Mail size={24} />
