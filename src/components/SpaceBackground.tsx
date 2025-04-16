@@ -1,4 +1,3 @@
-
 import { useEffect, useState, useCallback, useRef } from "react";
 
 interface Star {
@@ -37,7 +36,7 @@ const SpaceBackground = () => {
         top: `${Math.random() * 100}%`,
         left: `${Math.random() * 100}%`,
         delay: `${Math.random() * 5}s`,
-        opacity: Math.random() * 0.4 + 0.3 // More subtle opacity between 0.3 and 0.7
+        opacity: Math.random() * 0.4 + 0.3 
       });
     }
     
@@ -108,13 +107,13 @@ const SpaceBackground = () => {
 
   return (
     <div className="fixed inset-0 overflow-hidden -z-10">
-      {/* Subtle gradient overlay */}
+      {}
       <div className="absolute inset-0 bg-gradient-to-b from-space-dark to-space-darker opacity-70"></div>
       
-      {/* Noise texture overlay */}
+      {}
       <div className="absolute inset-0 bg-noise opacity-5"></div>
       
-      {/* Constellation lines */}
+      {}
       <svg className="absolute inset-0 w-full h-full pointer-events-none">
         {constellationPoints.current.map((point, index) => {
           if (index === constellationPoints.current.length - 1) return null;
@@ -134,7 +133,7 @@ const SpaceBackground = () => {
         })}
       </svg>
       
-      {/* Shooting stars */}
+      {}
       {shootingStars.map((star) => (
         <div
           key={star.id}
@@ -152,7 +151,7 @@ const SpaceBackground = () => {
         />
       ))}
       
-      {/* Stars */}
+      {}
       {stars.map((star) => (
         <div
           key={star.id}
@@ -174,7 +173,7 @@ const SpaceBackground = () => {
         />
       ))}
 
-      {/* Distant galaxies/nebulas represented as subtle gradient blobs */}
+      {}
       <div 
         className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-white bg-opacity-[0.01] blur-3xl"
         style={{
@@ -200,7 +199,7 @@ const SpaceBackground = () => {
         }}
       ></div>
       
-      {/* Subtle glowing orb following cursor */}
+      {}
       <div 
         className="fixed w-64 h-64 rounded-full pointer-events-none"
         style={{

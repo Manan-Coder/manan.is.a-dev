@@ -23,13 +23,6 @@ const blogs =
 [
   { 
     id: 1, 
-    title: "Sunburst arc galaxy", 
-    category: "Astrophysics",
-    date: "April 1, 2025",
-    description: "yayayayaa"
-  },
-  { 
-    id: 2, 
     title: "Building nomad, a foldable suitcase 3D printer", 
     category: "Programming",
     date: "April 6, 2025",
@@ -72,7 +65,7 @@ const Home = () => {
               </div>
               </Link>
               <Link to={"/blog"}>
-              
+
               <div className="absolute -top-4 -right-4 w-16 h-16 rounded-full bg-space-accent bg-opacity-20 backdrop-blur-xl border border-space-accent/30 flex items-center justify-center animate-float" style={{ animationDelay: "1s" }}>
                 <Rocket size={24} className="text-space-accent" />
             

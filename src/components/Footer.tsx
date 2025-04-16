@@ -1,5 +1,5 @@
 
-import { Github, Linkedin, Mail, Code } from "lucide-react";
+import { Github, Linkedin, Mail, Code, Link } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -13,7 +13,9 @@ const Footer = () => {
               &copy; {currentYear} <span className="font-bold text-white">Manan Sharma</span>. All rights reserved.
             </p>
             <p className="text-xs text-gray-500 mt-2 max-w-md">
-              Exploring the cosmic vastness of code, one project at a time.
+              Exploring the cosmic vastness of code, one project at a time.<br>
+              </br>
+              This website is open-sourced <a href={"https://github.com/Manan-Coder/manan.is.a-dev"} className="underline bold">here</a>!
             </p>
           </div>
           
@@ -60,7 +62,7 @@ const Footer = () => {
                 Designed with precision in the digital cosmos
               </span>
             </div>
-          </div>
+          </div>  
         </div>
       </div>
     </footer>

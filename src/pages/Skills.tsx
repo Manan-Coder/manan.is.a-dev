@@ -100,8 +100,8 @@ const Skills = () => {
             {[
               { name: "Machine Learning", icon: <Command size={24} /> },
               { name: "WebAssembly", icon: <Code size={24} /> },
-              { name: "Three.js", icon: <Globe size={24} /> },
-              { name: "Cloud Computing", icon: <Server size={24} /> }
+              { name: "Assembly", icon: <Code size={24} /> },
+              { name: "AWS", icon: <Server size={24} /> }
             ].map((item, index) => (
               <div key={index} className="bg-space-darker bg-opacity-70 backdrop-blur-md border border-space-accent/20 rounded-lg p-6 text-center hover:border-space-accent/50 transition-all duration-300">
                 <div className="flex justify-center text-space-accent mb-3">{item.icon}</div>
