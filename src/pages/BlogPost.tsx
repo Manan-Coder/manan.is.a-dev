@@ -1,4 +1,3 @@
-
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Calendar, Clock, Tag, ArrowLeft } from "lucide-react";
@@ -19,93 +18,69 @@ const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
   const [post, setPost] = useState<BlogPostData | null>(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-  // In a real app, this would fetch from an API or CMS
   useEffect(() => {
-    const fetchPost = () => {
-      // Simulating API call delay
-      setTimeout(() => {
-        // Sample post content with markdown
+    const fetchPost = async () => {
+      try {
+
+        const response = await fetch(`/blogs/${slug}.md`);
+        
+        if (!response.ok) {
+          throw new Error(`Blog post not found: ${slug}`);
+        }
+        
+        const markdownContent = await response.text();
+        
+ 
+        const { metadata, content } = parseMarkdown(markdownContent);
+        
         const postData: BlogPostData = {
-          title: "Exploring Black Holes: A Computational Approach",
-          date: "April 10, 2025",
-          category: "Astrophysics",
-          readTime: "8 min read",
-          content: `
-# Exploring Black Holes: A Computational Approach
-
-Black holes are some of the most fascinating and mysterious objects in our universe. In this post, we'll explore how to model and simulate black holes using computational methods.
-
-## What are Black Holes?
-
-A black hole is a region of spacetime where gravity is so strong that nothing—no particles or even electromagnetic radiation such as light—can escape from it. The theory of general relativity predicts that a sufficiently compact mass can deform spacetime to form a black hole.
-
-## The Mathematics Behind Black Holes
-
-The Schwarzschild radius formula:
-
-\`\`\`
-Rs = (2 * G * M) / c^2
-\`\`\`
-
-Where:
-- Rs is the Schwarzschild radius
-- G is the gravitational constant (6.674 × 10^-11 m^3 kg^-1 s^-2)
-- M is the mass of the object
-- c is the speed of light in vacuum (299,792,458 m/s)
-
-## Computational Models
-
-Here's a simple example of how we might calculate the Schwarzschild radius in Python:
-
-\`\`\`python
-import numpy as np
-
-def schwarzschild_radius(mass_kg):
-    G = 6.67430e-11  # gravitational constant in m^3 kg^-1 s^-2
-    c = 299792458    # speed of light in m/s
-    
-    radius = (2 * G * mass_kg) / (c**2)
-    return radius
-
-# Mass of the Sun in kg
-mass_sun = 1.989e30
-
-# Calculate the Schwarzschild radius for the Sun
-radius_sun = schwarzschild_radius(mass_sun)
-print(f"The Schwarzschild radius of the Sun would be {radius_sun:.3f} meters")
-\`\`\`
-
-## Visualizing Black Holes
-
-One of the most exciting aspects of computational astrophysics is the ability to visualize phenomena that we could never see directly. Using tools like **Three.js** or **OpenGL**, we can create realistic visualizations of black holes.
-
-![Black Hole Simulation](https://source.unsplash.com/random/800x400/?space)
-
-## Future Directions
-
-As computational power increases, our ability to model black holes with greater accuracy improves. Some interesting areas for future exploration include:
-
-1. Simulating Hawking radiation
-2. Modeling black hole mergers
-3. Exploring the information paradox computationally
-
-## Conclusion
-
-Computational methods provide us with powerful tools to explore and understand black holes, even though we can never directly observe them. By combining the mathematics of general relativity with numerical methods, we can gain insights into these fascinating cosmic objects.
-
----
-
-*This is a simplified explanation of a very complex topic. For more detailed information, refer to textbooks on general relativity and computational astrophysics.*
-          `
+          title: metadata.title || "Untitled Post",
+          date: metadata.date || "No date",
+          category: metadata.category || "Uncategorized",
+          readTime: metadata.readTime || "Unknown read time",
+          content: content
         };
+        
         setPost(postData);
+      } catch (err) {
+        console.error("Error fetching blog post:", err);
+        setError((err as Error).message);
+      } finally {
         setLoading(false);
-      }, 500);
+      }
     };
 
     fetchPost();
   }, [slug]);
+
+  const parseMarkdown = (markdown: string) => {
+    const frontmatterRegex = /^---\s*([\s\S]*?)\s*---/;
+    const match = markdown.match(frontmatterRegex);
+    
+    if (!match) {
+      return {
+        metadata: {},
+        content: markdown
+      };
+    }
+    
+    const frontMatter = match[1];
+    const content = markdown.replace(frontmatterRegex, '').trim();
+    
+
+    const metadata: Record<string, string> = {};
+    frontMatter.split('\n').forEach(line => {
+      const [key, ...valueParts] = line.split(':');
+      if (key && valueParts.length) {
+        const value = valueParts.join(':').trim();
+        metadata[key.trim()] = value;
+      }
+    });
+    
+    return { metadata, content };
+  };
 
   if (loading) {
     return (
@@ -116,12 +91,12 @@ Computational methods provide us with powerful tools to explore and understand b
     );
   }
 
-  if (!post) {
+  if (error || !post) {
     return (
       <div className="min-h-screen pt-24 pb-12 flex flex-col">
         <div className="container mx-auto px-4 flex-grow text-center">
           <h1 className="text-3xl font-bold mb-4">Post Not Found</h1>
-          <p className="text-gray-300 mb-8">The blog post you're looking for doesn't exist.</p>
+          <p className="text-gray-300 mb-8">{error || "The blog post you're looking for doesn't exist."}</p>
           <Button asChild className="bg-white hover:bg-gray-200 text-black">
             <Link to="/blog">
               <ArrowLeft size={16} className="mr-2" /> Back to Blog
@@ -168,7 +143,7 @@ Computational methods provide us with powerful tools to explore and understand b
                 h3: ({ children, ...props }) => <h3 className="text-xl font-bold mb-2 mt-4" {...props}>{children}</h3>,
                 p: ({ children, ...props }) => <p className="mb-4 text-gray-300 leading-relaxed" {...props}>{children}</p>,
                 a: ({ children, ...props }) => <a className="text-white hover:text-gray-200 underline" {...props}>{children}</a>,
-                img: ({ src, alt, ...props }) => <img className="rounded-lg my-6 max-w-full" src={src} alt={alt} {...props} />,
+                img: ({ children, src, alt, ...props }) => <img className="rounded-lg my-6 max-w-full" src={src} alt={alt} {...props} />,
                 ul: ({ children, ...props }) => <ul className="list-disc pl-6 mb-4 space-y-2 text-gray-300" {...props}>{children}</ul>,
                 ol: ({ children, ...props }) => <ol className="list-decimal pl-6 mb-4 space-y-2 text-gray-300" {...props}>{children}</ol>,
                 code: ({ children, className, ...props }) => {

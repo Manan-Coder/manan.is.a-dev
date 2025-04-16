@@ -1,7 +1,7 @@
 
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Github, ExternalLink, Code, Database, Server, Zap, Boxes, Swords, TentTree, AppWindowIcon, Cpu, Clock } from "lucide-react";
+import { Github, ExternalLink, Boxes, Swords, TentTree, AppWindowIcon, Cpu, Clock } from "lucide-react";
 
 const Projects = () => {
   const projects = [

@@ -4,65 +4,19 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar, Clock, Tag } from "lucide-react";
 
 const BlogIndex = () => {
-  // Sample blog post data
   const blogPosts = [
-    {
-      id: 1,
-      title: "Exploring Black Holes: A Computational Approach",
-      excerpt: "Dive into the mathematics behind black holes and how we can model them using computational methods.",
-      category: "Astrophysics",
-      date: "April 10, 2025",
-      readTime: "8 min read",
-      slug: "exploring-black-holes"
-    },
-    {
-      id: 2,
-      title: "Building a Real-time Chat App with Rust and WebSockets",
-      excerpt: "A step-by-step guide on how I built a performant chat application using Rust on the backend and React on the frontend.",
+    { 
+      id: 1, 
+      title: "Building nomad, a foldable suitcase 3D printer", 
       category: "Programming",
-      date: "April 5, 2025",
-      readTime: "12 min read",
-      slug: "rust-chat-app"
-    },
-    {
-      id: 3,
-      title: "The Mathematics of Rocket Propulsion",
-      excerpt: "Understanding the fundamental equations that govern rocket propulsion and how they apply to real-world rockets.",
-      category: "Astrophysics",
-      date: "March 28, 2025",
-      readTime: "10 min read",
-      slug: "rocket-propulsion-math"
-    },
-    {
-      id: 4,
-      title: "Creating Custom Slack Bots for Productivity",
-      excerpt: "How I built a custom Slack bot to automate repetitive tasks and improve team workflow.",
-      category: "Programming",
-      date: "March 20, 2025",
-      readTime: "7 min read",
-      slug: "slack-bots-productivity"
-    },
-    {
-      id: 5,
-      title: "The Theory of Relativity: Simplified Explanation",
-      excerpt: "Breaking down Einstein's Theory of Relativity in simpler terms with practical examples.",
-      category: "Astrophysics",
-      date: "March 15, 2025",
-      readTime: "9 min read",
-      slug: "relativity-simplified"
-    },
-    {
-      id: 6,
-      title: "My Journey Learning Rust as a JavaScript Developer",
-      excerpt: "The challenges and revelations I experienced transitioning from JavaScript to Rust programming.",
-      category: "Programming",
-      date: "March 8, 2025",
-      readTime: "6 min read",
-      slug: "learning-rust-journey"
+      date: "April 6, 2025",
+      description:"This month, I decided to make a foldable 3d printer which turns into a suitcase and I'm still building it! I update this blog almost everyday so catch up with my journey!" ,
+      readtime:"5 minutes",
+      slug:"nomad"
     }
   ];
 
-  // Group posts by category
+
   const categories = [...new Set(blogPosts.map(post => post.category))];
 
   return (
@@ -71,11 +25,11 @@ const BlogIndex = () => {
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 cosmic-glow">My <span className="text-space-accent">Blog</span></h1>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Thoughts on astrophysics, programming, and my journey as a young developer.
+            Thoughts on astrophysics, programming, and my journey as a curious voyager.
           </p>
         </div>
 
-        {/* Categories Filter */}
+        {}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           <Button variant="outline" className="border-space-accent text-space-accent hover:bg-space-accent/10">
             All Posts
@@ -87,7 +41,7 @@ const BlogIndex = () => {
           ))}
         </div>
 
-        {/* Blog Posts Grid */}
+        {}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogPosts.map(post => (
             <div 
@@ -109,10 +63,10 @@ const BlogIndex = () => {
                   <Link to={`/blog/${post.slug}`}>{post.title}</Link>
                 </h2>
                 
-                <p className="text-gray-400 mb-4">{post.excerpt}</p>
+                <p className="text-gray-400 mb-4">{post.description}</p>
                 
                 <div className="flex items-center text-sm text-gray-400">
-                  <Clock size={12} className="mr-1" /> {post.readTime}
+                  <Clock size={12} className="mr-1" /> {post.readtime}
                 </div>
               </div>
               

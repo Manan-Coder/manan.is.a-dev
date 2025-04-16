@@ -53,7 +53,7 @@
   }
 }
 
-/* Star animations */
+
 .star {
   @apply absolute bg-white rounded-full animate-twinkle;
 }
@@ -73,7 +73,7 @@
   animation-delay: 0s;
 }
 
-/* Shooting star animation */
+
 @keyframes shootingstar {
   0% {
     transform: rotate(-45deg) translateX(0);
@@ -92,7 +92,7 @@
   }
 }
 
-/* Constellation hover style */
+
 .constellation-point {
   @apply absolute w-1 h-1 bg-white bg-opacity-20 rounded-full;
   transition: all 0.3s ease;
@@ -103,7 +103,7 @@
   transform: scale(2);
 }
 
-/* Minimalist styling with refined touches */
+
 .minimal-title {
   @apply text-white font-bold;
   text-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
@@ -124,7 +124,7 @@
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
 }
 
-/* Text highlight effect */
+
 .text-highlight {
   @apply relative;
 }
@@ -142,7 +142,7 @@
   transform-origin: left;
 }
 
-/* Improved blog styling */
+
 .prose h1, .prose h2, .prose h3 {
   @apply text-white;
 }
@@ -165,7 +165,6 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Card hover animations */
 .hover-card {
   @apply transition-all duration-300 ease-in-out;
 }
@@ -174,7 +173,7 @@
   transform: translateY(-5px);
 }
 
-/* Refined button styles */
+
 .btn-refined {
   @apply relative overflow-hidden transition-all duration-300;
 }
@@ -190,7 +189,7 @@
   transform: translateX(0);
 }
 
-/* New hover effect for navigation links */
+
 .nav-link {
   @apply relative;
 }
@@ -214,7 +213,7 @@
   @apply w-full;
 }
 
-/* Cosmic glow on hover */
+
 .cosmic-glow {
   transition: text-shadow 0.5s ease;
 }

@@ -26,7 +26,8 @@ const blogs =
     title: "Building nomad, a foldable suitcase 3D printer", 
     category: "Programming",
     date: "April 6, 2025",
-    description:"This month, I decided to make a foldable 3d printer which turns into a suitcase and I'm still building it! I update this blog almost everyday so catch up with my journey!" 
+    description:"This month, I decided to make a foldable 3d printer which turns into a suitcase and I'm still building it! I update this blog almost everyday so catch up with my journey!" ,
+    slug:"nomad"
   }
 ]
 const Home = () => {
@@ -154,7 +155,7 @@ const Home = () => {
                   {post.description}
                   </p>
                 <Button asChild variant="link" className="p-0 text-space-accent hover:text-space-highlight">
-                  <Link to={`/blog/${post.id}`}>
+                  <Link to={`/blog/${post.slug}`}>
                     Read More <ArrowRight size={16} className="ml-1" />
                   </Link>
                 </Button>
