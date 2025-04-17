@@ -30,7 +30,7 @@ const Projects = () => {
       tags: ["React", "Typescript", "Tailwind"],
       icon: <TentTree className="text-space-accent" size={32} />,
       github: "https://github.com/Manan-Coder/manan.is.a-dev",
-      demo: "http://manan.loves-being-a.dev/",
+      demo: "http://manans.loves-being-a.dev/",
     },
     {
       id: 4,
