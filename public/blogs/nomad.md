@@ -45,7 +45,7 @@ Completed the whole mechanism and structure of the printer, now just left with t
 I polished the y-gantry and completed the x and z-gantry today, this included a lot of restructuring of the frame but atleast its done now, now tomorrow I can simply complete the protective covering, BOM, readme and put an end to the software part of this project. Now the real fun begins, HARDWARE!!!!
 Also I tried taking a few cinematic shots for the documentary today (in most of the cases i failed brutally), but yeah this project seems okay-ish now. The biggest thing i've built so far lol.
 Time: ~11 hours
-<br>
+
 Some images - 
 
 
@@ -62,11 +62,11 @@ Some images -
 
 
 # Day 5 and 6 - 
-I was quite a lil ill on the 5th day so i didnt work much, i've finished the cad model tho, i was left with the outer protective frame which will save my printer from jerks and shocks. I earlier decided to use ABS plastic sheets but making a budget printer in this economy....... so finally inflation made humans use wood again, thats right, imm using wooden boards as my proectice layering now :p hmm im certainly in the budget(plss goddd plss i beg you).
+I was quite a lil ill on the 5th day so i didnt work much, i've finished the cad model tho, i was left with the outer protective frame which will save my printer from jerks and shocks. I earlier decided to use ABS plastic sheets but making a budget printer in this economy....... so finally inflation made humans use wood again, thats right, imm using wooden boards as my protective layering now :p hmm im certainly in the budget(plss goddd plss i beg you).
 Hours taken: ~7
 Alright so the final renders of the printer looks smth like this - 
-**drumrolls*
-<br>
+*drumrolls*
+
 ![final](https://hc-cdn.hel1.your-objectstorage.com/s/v3/a1d09003bf3c47607def2396e77064e6d62d883b_screenshot_2025-04-11_at_11.51.11___pm.png)
 ![final](https://hc-cdn.hel1.your-objectstorage.com/s/v3/b1560f93530c57f3737e558d750d972c38603f64_screenshot_2025-04-11_at_11.51.28___pm.png)
 ![final](https://hc-cdn.hel1.your-objectstorage.com/s/v3/bdfddca92566a885b01bacecbaa2d7d5aa4e6edb_screenshot_2025-04-11_at_10.05.48___pm.png)
